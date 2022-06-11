@@ -6,13 +6,15 @@ router.get(`/`, function(req, res) {
         city: `Seattle`,
         state: `WA`,
         cuisines: `Thai, Pan-Asian`,
-        pic: `http://placekitten.com/250/250`,
+        pic: `/images/storefront-unsplash.jpg`,
+        // unsplash https://unsplash.com/photos/t2_w4MeSIfI | photographer https://unsplash.com/@lucadeasti
     }, {
         name: `Coding Cat Cafe`,
         city: `Phoenix`,
         state: `AZ`,
         cuisines: `Coffee, Bakery`,
-        pic: `http://placekitten.com/250/250`,
+        pic: `/images/weird-burger-unsplash.jpg`,
+        //unsplash https://unsplash.com/photos/JN9DY0YswzE | photographer https://unsplash.com/@wulcan
     }]
     res.render(`places/index`, {places})
 })
