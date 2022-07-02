@@ -20,6 +20,29 @@ router.get(`/:id`, function(req, res) {
     }
 })
 
+router.get(`/:id/edit`, function(req, res) {
+    var id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render(`error404`)
+    } else if (!places[id]) {
+        res.render(`error404`)
+    } else {
+        res.render(`places/edit`, { place: places[id], id})
+    }
+})
+
+router.put(`/:id`, function(req, res) {
+    var id = Number(req.params.id)
+    if (isNaN[id]) {
+        res.render(`error404`)
+    } else if (!places[id]) {
+        res.render(`error404`)
+    } else {
+        res.redirect(`/places/${id}`)
+    }
+    console.log(req.params.id)
+})
+
 router.post(`/`, function(req, res) {
     //Default for info not provided
     if (!req.body.pic) {
