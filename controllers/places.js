@@ -38,13 +38,24 @@ router.put(`/:id`, function(req, res) {
     } else if (!places[id]) {
         res.render(`error404`)
     } else {
+        //Default for info not available
+        if (!req.body.pic) {
+            req.body.pic = `http://placekitten.com/400/400`
+        }
+        if (!req.body.city) {
+            req.body.city = `Anytown`
+        }
+        if (!req.body.state) {
+            req.body.state = `USA`
+        }
+        //save new data
+        places[id] = req.body
         res.redirect(`/places/${id}`)
     }
-    console.log(req.params.id)
 })
 
 router.post(`/`, function(req, res) {
-    //Default for info not provided
+    //Default for info not available
     if (!req.body.pic) {
         req.body.pic = `http://placekitten.com/400/400`
     }
