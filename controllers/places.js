@@ -21,7 +21,7 @@ router.get(`/:id`, function(req, res) {
 })
 
 router.post(`/`, function(req, res) {
-    //Default
+    //Default for info not provided
     if (!req.body.pic) {
         req.body.pic = `http://placekitten.com/400/400`
     }

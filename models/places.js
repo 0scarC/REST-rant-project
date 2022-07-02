@@ -1,6 +1,6 @@
 module.exports = [{
     name: `H-Thai-ML`,
-    city: `Seattle`,
+    city: `Seattle`, 
     state: `WA`,
     cuisines: `Thai, Pan-Asian`,
     pic: `/images/storefront-unsplash.jpg`,
