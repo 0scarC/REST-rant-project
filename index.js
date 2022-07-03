@@ -3,6 +3,7 @@
 //npm i react
 //npm i express-react-views
 //npm i method-override
+//npm i mongoose (mongoDB utility)
 //can do npm i express react express-react-views
 
 require(`dotenv`).config()
