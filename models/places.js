@@ -22,9 +22,17 @@ const placeSchema = new mongoose.Schema({
     name: {type: String, required: true},
     pic: {type: String},
     cuisines: {type: String, required: true},
-    city: {type: String, default: 'Anytown'},
-    state: {type: String, default: 'USA'},
-    founded: {type: Number}
+    city: {type: String},
+    state: {type: String},
+    founded: {
+        type: Number,
+        min: [1780, `Probably not that old.`],
+        max: [new Date().getFullYear(), `Can it even be that new?`]
+    }
 })
+
+placeSchema.methods.showEstablished = function() {
+    return `${this.name} has been in ${this.city}, ${this.state} since ${this.founded}`
+}
 
 module.exports = mongoose.model(`Place`, placeSchema)

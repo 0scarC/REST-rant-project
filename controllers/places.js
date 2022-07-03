@@ -68,8 +68,15 @@ router.post(`/`, function(req, res) {
             res.redirect(`/places`)
         })
         .catch(err => {
-            console.log(`err`, err)
-            res.render(`error404`)
+            if (err && err.name == `ValidationError`) {
+                var message = `Validation Error: `
+                for (var field in err.errors) {
+                    message += `${field} was invalid. ${err.errors[field].message}`
+                }
+                res.render(`places/new`, {message})
+            } else {
+                res.render(`error404`)
+            }
         })
 })
 
