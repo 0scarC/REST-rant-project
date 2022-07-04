@@ -20,10 +20,10 @@ const mongoose = require(`mongoose`)
 
 const placeSchema = new mongoose.Schema({
     name: {type: String, required: true},
-    pic: {type: String},
+    pic: {type: String, defualt: 'http://placekitten.com/400/400'},
     cuisines: {type: String, required: true},
-    city: {type: String},
-    state: {type: String},
+    city: {type: String, default: 'Anytown'},
+    state: {type: String, default: 'USA'},
     founded: {
         type: Number,
         min: [1780, `Probably not that old.`],
